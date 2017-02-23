@@ -230,37 +230,37 @@ class Backend extends CI_Controller
 				array(
 					'field'   => 'id', 
 					'label'   => '用户ID',
-					'rules'   => 'trim|strtolower|required|xss_clean|integer'
+					'rules'   => 'trim|strtolower|required|integer'
 				),
 				array(
 					'field'   => 'username', 
 					'label'   => '用户名',
-					'rules'   => 'trim|strtolower|required|xss_clean|alpha_dash|max_length[20]' . ($user_id == 0 ? '|is_unique[users.username]' : '')
+					'rules'   => 'trim|strtolower|required|alpha_dash|max_length[20]' . ($user_id == 0 ? '|is_unique[users.username]' : '')
 				),
 				array(
 					'field'   => 'email', 
 					'label'   => '用户邮箱',
-					'rules'   => 'trim|strtolower|required|xss_clean|valid_email' . ($user_id == 0 ? '|is_unique[users.email]' : '')
+					'rules'   => 'trim|strtolower|required|valid_email' . ($user_id == 0 ? '|is_unique[users.email]' : '')
 				),
 				array(
 					'field'   => 'role_id', 
 					'label'   => '角色',
-					'rules'   => 'trim|strtolower|required|xss_clean|integer'
+					'rules'   => 'trim|strtolower|required|integer'
 				),
 				array(
 					'field'   => 'home', 
 					'label'   => '用户入口URI',
-					'rules'   => 'trim|strtolower|required|xss_clean'
+					'rules'   => 'trim|strtolower|required'
 				),
 				array(
 					'field'   => 'password', 
 					'label'   => '新密码',
-					'rules'   => 'trim|strtolower|' . ($user_id == 0 ? 'required|' : '') . 'xss_clean|max_length[20]'
+					'rules'   => 'trim|strtolower|' . ($user_id == 0 ? 'required|' : '') . 'max_length[20]'
 				),
 				array(
 					'field'   => 'password2', 
 					'label'   => '再次输入新密码',
-					'rules'   => 'trim|strtolower|' . ($user_id == 0 ? 'required|' : '') . 'xss_clean|max_length[20]|matches[password]'
+					'rules'   => 'trim|strtolower|' . ($user_id == 0 ? 'required|' : '') . 'max_length[20]|matches[password]'
 				)
 			)
 		);

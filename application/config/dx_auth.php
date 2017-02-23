@@ -15,7 +15,7 @@
 |
 */
 
-$config['DX_website_name'] = '电教应用';
+$config['DX_website_name'] = 'dx-auth for codeigniter 3';
 $config['DX_webmaster_email'] = 'webmaster@yourhost.com';
 
 /*
@@ -251,13 +251,7 @@ $config['DX_reset_password_failed_view'] = 'auth/general_message';
 if (!array_key_exists('dx_permission_keys', $config)) {
 	 $config['dx_permission_keys'] = array();
 }
-//$config['dx_permission_keys'] = array_merge($config['dx_permission_keys'], array('edit', 'delete'));
-//project qcedu
-$config['dx_permission_keys'] = array_merge($config['dx_permission_keys'], array('qcedu_read', 'qcedu_edit', 'qcedu_delete'));
-$config['dx_permission_keys'] = array_merge($config['dx_permission_keys'], array('cx_manager'));
-
-//project seot
-$config['dx_permission_keys'] = array_merge($config['dx_permission_keys'], array('seot_edit', 'seot_delete'));
+// $config['dx_permission_keys'] = array_merge($config['dx_permission_keys'], array('edit', 'delete'));
 
 /*
  * App info
@@ -265,6 +259,4 @@ $config['dx_permission_keys'] = array_merge($config['dx_permission_keys'], array
 if (!array_key_exists('apps_info', $config)) {
 	 $config['apps_info'] = array();
 }
-$config['apps_info']['cx'] = '考试成绩查询';
-$config['apps_info']['qcedu'] = '天门永安驾校道路运输驾驶员继续教育管理';
-$config['apps_info']['seot'] = '天门特种设备人员培训考核报名管理';
+// $config['apps_info']['demo'] = 'Demo app';
