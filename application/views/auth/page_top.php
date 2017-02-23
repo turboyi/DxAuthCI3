@@ -1,5 +1,5 @@
 <?php
-$ua = $this->uri->segment_array();
+$uri = $this->uri;
 
 ?><!DOCTYPE html>
 <html lang="zh-CN">
@@ -56,22 +56,22 @@ $ua = $this->uri->segment_array();
             </li>
             <li role="separator" class="divider"></li>
 <?php   if ($this->dx_auth->is_admin()):?>
-            <li <?php echo $ua[2]=='users'?' class="active"':'';?>>
+            <li <?php echo $uri->segment(2)=='users'?' class="active"':'';?>>
                 <?php echo anchor('backend/users', '用户管理');?>
             </li>
-            <li <?php echo $ua[2]=='roles'?' class="active"':'';?>>
+            <li <?php echo $uri->segment(2)=='roles'?' class="active"':'';?>>
                 <?php echo anchor('backend/roles', '角色管理');?>
             </li>
-            <li <?php echo $ua[2]=='uri_permissions'?' class="active"':'';?>>
+            <li <?php echo $uri->segment(2)=='uri_permissions'?' class="active"':'';?>>
                 <?php echo anchor('backend/uri_permissions', 'URI权限管理');?>
             </li>
-            <li <?php echo $ua[2]=='custom_permissions'?' class="active"':'';?>>
+            <li <?php echo $uri->segment(2)=='custom_permissions'?' class="active"':'';?>>
                 <?php echo anchor('backend/custom_permissions', '自定义权限管理');?>
             </li>
 <?php   endif;?>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li <?php echo ($ua[1]=='auth' && $ua[2]=='custom_permissions')?' class="active"':'';?>>
+            <li <?php echo ($uri->segment(1)=='auth' && $uri->segment(2)=='custom_permissions')?' class="active"':'';?>>
                 <?php echo anchor('auth/custom_permissions', '当前权限');?>
             </li>
             <li><?php echo anchor('auth/change_password', '修改密码', 'target="_blank"');?></li>
