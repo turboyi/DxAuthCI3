@@ -198,7 +198,7 @@ class Backend extends CI_Controller
 		$this->load->model('dx_auth/users', 'users');
 		$this->load->model('dx_auth/roles', 'roles');
 		
-		$users = $this->users->get_all($offset, $row_count)->result();
+		$users = $this->users->get_all()->result();
 		
 		if ($user_id == 0) {
 			$data['user'] = (object) array(
