@@ -61,7 +61,7 @@ echo form_hidden('id', $user->id);
 <?php echo form_close()?>
 <script>
 $(document).ready(function(){
-	$(':password').change(function(){
+	$(':password').keyup(function(){
 		var pass1 = $('input[name=password]').val();
 		var pass2 = $('input[name=password2]').val();
 		if (pass1 != pass2) {

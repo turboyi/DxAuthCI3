@@ -50,4 +50,23 @@ $labelClass = array('class' => 'col-sm-2 control-label');
 </div>
 
 <?php echo form_close(); ?>
-</fieldset>
+</div>
+<script>
+$(document).ready(function(){
+	$(':password').keyup(function(){
+		var pass1 = $('input[name=new_password]').val();
+		var pass2 = $('input[name=confirm_new_password]').val();
+		if (pass1 != pass2) {
+			$(':submit').prop('disabled', 'disabled');
+			$('#password2error').html('两次的密码不一致！');
+		} else {
+			$(':submit').removeProp('disabled');
+			if (pass1 == '') {
+				$('#password2error').html('密码不修改！')
+			} else {
+				$('#password2error').html('');
+			}
+		}
+	});
+});
+</script>
